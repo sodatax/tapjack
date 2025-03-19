@@ -1,0 +1,71 @@
+<!-- Info:
+Programmer: Hosea Nacanaynay
+Date: 03/12/2025
+
+This program plays local two player Slapjack using keyboard controls.
+-->
+<!-- Rules:
+- Both players start with 26 cards
+- Players keep placing cards using "Q" or "[" till they see Jack
+- Slapjack using "W" or "]"
+- Person who Slapjack's first gets all the cards 
+    - use .length to keep track of the cards each player gets
+    - keep track of which cards are in the middle/the cards each player has using array
+- Repeat until one player gets all the cards
+- Player with all the cards win
+-->
+<!-- Not Working:
+- In a case where a player has no cards left and jack was NOT the last card played, player with most card does not show winning
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Slapjack!</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h1>Tapjack!</h1>
+        <p>(Like Slapjack but with your keyboard!)</p>
+        <div>
+            <h4>Game and Rules:</h4>
+            <li>The goal of Tapjack is to have all the cards in your hand.</li>
+            <li>Each player will place a card down (using "Q" or "[") until they see a "J - Jack" card.</li>
+            <li>When a Jack is placed, both players will try to tap their "Jack!" key ("W" or "]") as fast as they can!</li>
+            <li>Whoever taps their key the fastest wins all the cards that were placed (aka, the pile)!</li>
+            <li>The process repeats until one player has all the cards.</li>
+            <li>If a player taps their Jack! key before a Jack is on screen, that player will be penalized for 2 turns and cannot use their Jack! key.</li>
+        </div>
+        
+        <br>
+
+        <form>
+            <label id="p1">Player One Name:</label>
+            <input type="text" id="player_one_name" name="players">
+            <br><br>
+            <label id="p2">Player Two Name:</label>
+            <input type="text" id="player_two_name" name="players">
+            <br><br>
+            <button type="button" onClick="startGame(this)">Start Game</button>
+            
+            <button id="p1_place" type="button" onClick="placeCard(player_one_deck)">pc1</button>
+            <button id="p1_jack" type="button" onClick="tapJack()">tj1</button>
+            
+            <button id="p2_place" type="button" onClick="placeCard(player_two_deck)">pc2</button>
+            <button id="p2_jack" type="button" onClick="tapJack()">tj2</button>
+
+            <button type="button" onClick="tester()">Test Button</button>
+        </form>
+
+        <h3 id="player_one_cards"></h3>
+        <h3 id="player_two_cards"></h3>
+        <h3 id="card_pile_amt"></h3>
+        <!-- <h3 id="card_pile"></h3> -->
+
+        <div id="card"></div>
+        <h1 id="winner"></h1>
+        
+        <h1 id="tester"></h1>
+    </body>
+</html>

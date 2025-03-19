@@ -1,0 +1,15 @@
+#p1_place, #p2_place, #p1_jack, #p2_jack {
+    background: transparent;
+    border: none;
+    font-size:0;
+    position: fixed;
+    bottom: 0;
+}
+
+img{
+    max-width: 100px;
+}
+
+ul::marker{
+    color: black;
+}
